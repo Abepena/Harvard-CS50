@@ -14,6 +14,8 @@ def main():
         print(f"Flight {flight.id}: {flight.origin} to {flight.destination}, {flight.duration} minutes.")
 
     # Prompt user to choose a flight.
+    # remember :id is a placeholder for the key of the 
+    # dictionary passed in after the SQL query
     flight_id = int(input("\nFlight ID: "))
     flight = db.execute("SELECT origin, destination, duration FROM flights WHERE id = :id",
                         {"id": flight_id}).fetchone()
