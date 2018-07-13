@@ -7,9 +7,19 @@ Welcome!
 
 {% block body %}
 <div class="container">
+        {% if username %}
+        <h1>Hey {{ username.capitalize() }}!</h1>
+        <p>Check out the booklist below</p>
+        <a href="{{ url_for('books') }}" class="btn btn-dark">Book List</a>
+        <a href="{{ url_for('logout') }}" class="btn btn-dark">Logout</a>
+
+        {% else %}
         <h1>Welcome to Flask-Books</h1>
+        <p>Please login or register view the booklist</p>
         <a class="btn btn-dark" href="{{ url_for('login') }}">Login</a>
         <a name=""class="btn btn-dark" href="{{ url_for('register') }}" role="button">Register</a>
+        {% endif %}
+
 </div>
 {% endblock  %}
     

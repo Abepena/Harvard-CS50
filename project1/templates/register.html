@@ -9,13 +9,13 @@
 {% block body %}
 <div class="container mt-2">
     <h1>Register</h1>
-    <form class="form-group" action="{{ url_for('index') }}" method="post">
+    <form class="form-group" action="" method="post">
         <label for="username">Username:</label>
         <input type="text" class="form-control form-control-sm" name="username">
         <label for="email">Email:</label>
         <input type="email" class="form-control form-control-sm" name="email">
         <label for="password">Password:</label>
-        <input type="text" class="form-control form-control-sm" name="username">
+        <input type="password" class="form-control form-control-sm" name="password">
         <button class="form-control btn btn-dark mt-2"type="submit">Register</button>
     </form>
     <a class="btn btn-primary mt-2" href="{{ url_for("index") }}">Back to Homepage</a>

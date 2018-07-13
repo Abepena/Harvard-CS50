@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+
+
+{% block title %}
+    Book List
+{% endblock  %}
+    
+{% block body %}
+<h1>Book List</h1>
+<a href="{{ url_for('index') }}" class="btn btn-dark">Home</a>
+<a href="{{ url_for('logout') }}" class="btn btn-dark">Logout</a>
+<ul>
+    {% for book in book_list %}
+    <a><li>{{ book.author }}: {{book.title}}</li></a>
+    {% endfor %}
+</ul>
+{% endblock %}
