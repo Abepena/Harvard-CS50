@@ -7,11 +7,13 @@
 
 
 {% block body %}
-    <h1>Search for a book by title</h1>
-    <form action="{{ url_for('results'), search }}" class="form-group">
-        <label for="title" class="form-control">Book Title:</label>
-        <input type="text" name="search" class="form-control" value="search">
-    </form>
+<h1>Search for a book</h1>
+<form action="{{ url_for('results') }}" class="form-group" method="POST">
+    <label for="search" class="form-control">Book Title:</label>
+    <input type="text" name="search" class="form-control">
+    <button type="submit" class="btn btn-primary">Search</button>
+    <a href="{{ url_for('logout') }}" class="btn btn-dark">Logout</a>
+</form>
 {% endblock  %}
     
     

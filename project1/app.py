@@ -94,8 +94,9 @@ def books():
 def search():
     return render_template('book_search.html')
 
-@app.route('/results/<string:search>', methods=["GET","POST"])
-def results(search):
+@app.route('/results/', methods=["POST"])
+def results():
+    search = request.form["search"]
     try:
         year = int(search)
         results = db.execute(
@@ -105,12 +106,13 @@ def results(search):
     except:
         results = db.execute(
             "SELECT * from books WHERE\
-            isbn LIKE :search% OR author LIKE :search% OR title LIKE :search%,",
-            {"search": search}
+            isbn LIKE :search OR author LIKE :search OR title LIKE :search",
+            {"search":"%" + search + "%"}
         ).fetchall()
     
     if results:
         return render_template('book_list.html', book_list=results)
+    return "No books in the database match your results"
 
 if __name__ == "__main__":
     app.run(debug=True)
