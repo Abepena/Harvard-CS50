@@ -1,0 +1,19 @@
+{% extends "layout.html" %}
+
+
+{% block title %}
+    {{ book.title }}
+{% endblock  %}
+
+{% block body %}
+<div class="container">
+  <h1>{{ book.title}} </h1>
+  <ul class="list-unstyled">
+    <li>Stars: #/5 </li>
+    <li>Author: {{ book.author }}</li>
+    <li>Year Published: {{ book.year }}</li>
+    <li class="small">ISBN: {{ book.isbn }}</li>
+  </ul>
+</div>
+{% endblock  %}
+    

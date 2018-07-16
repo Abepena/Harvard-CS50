@@ -11,7 +11,9 @@
 <a href="{{ url_for('logout') }}" class="btn btn-dark">Logout</a>
 <ul>
     {% for book in book_list %}
-    <a><li>{{ book.author }}: {{book.title}}</li></a>
+    <a href="{{ url_for('book_detail', book_id=book.id) }}">
+        <li>{{ book.author }}: {{book.title}}</li>
+    </a>
     {% endfor %}
 </ul>
 {% endblock %}
