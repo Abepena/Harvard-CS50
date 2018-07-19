@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+
+
+{% block title %}
+    My Reviews
+{% endblock  %}
+
+
+{% block body %}
+    <h1>My reviews</h1>
+    {% if reviews %}
+        {% for review in reviews %}
+        <h4>{{review.title}} by {{ review.author }}</h4>
+        <p> 
+            Review: 
+            <br>
+            {% if review.review|length > 50 %}
+                {{review.review|truncate(50)}}...
+                <a href="#">See more</a>
+            {% else %}
+                {{ review.review}}
+            {% endif %}
+        </p>
+        {% endfor %}
+    {% else %}
+        <p>You have not reviewed a book yet</p>
+    {% endif %}
+{% endblock  %}
+    
+    

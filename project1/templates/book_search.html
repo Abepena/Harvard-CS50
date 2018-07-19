@@ -7,12 +7,12 @@
 
 
 {% block body %}
-<h1>Search for a book</h1>
+<h1>Hey {{ username.capitalize() }}, search for a book</h1>
 <form action="{{ url_for('results') }}" class="form-group" method="POST">
     <label for="search" class="form-control">Search by ISBN, Title, Author, or Publication Year:</label>
     <input type="text" name="search" class="form-control">
-    <button type="submit" class="btn btn-primary">Search</button>
-    <a href="{{ url_for('logout') }}" class="btn btn-dark">Logout</a>
+    <button type="submit" class="btn btn-primary mt-2">Search</button>
+    <a href="{{ url_for('logout') }}" class="btn btn-dark mt-2">Logout</a>
 </form>
 {% endblock  %}
     

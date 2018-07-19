@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+
+
+{% block title %}
+    Success!
+{% endblock  %}
+
+
+{% block body %}
+    <h3>{{ message }}</h3>
+    <a class="btn btn-dark" href="{{ url_for('index') }}">Search again</a>  
+    <a href="{{ url_for('my_reviews')}}" class="btn btn-dark">My reviews</a>
+{% endblock  %}
+    
+    
