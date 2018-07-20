@@ -1,0 +1,5 @@
+### ignore bash files setting environment variables
+### ignore pdf of lecture slides
+*.sh
+*.pdf
+currency*
