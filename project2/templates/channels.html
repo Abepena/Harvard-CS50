@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+
+{% block title %}
+  Channels List
+{% endblock  %}
+
+
+{% block body %}
+<h1>Channels Page</h1>
+<h3>{{ message }}</h3>
+<form id="add-channel">
+    <input type="text" id="new-channel" placeholder="New Channel Name">
+    <button type="submit" class="btn">Add Channel</button>
+</form>
+<div id="channels">
+    {% if channels %}
+        {% for channel in channels.sort()  %}
+        <a href="">{{ channel }}</a>
+        {% endfor %}
+    {% endif %}
+</div>  
+<script src="{{ url_for('static', filename='channels.js') }}"></script>  
+{% endblock  %}
+    
